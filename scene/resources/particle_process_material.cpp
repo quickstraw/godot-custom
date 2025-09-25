@@ -1095,6 +1095,7 @@ void ParticleProcessMaterial::_update_shader() {
 			code += "	} else {\n";
 			code += "		TRANSFORM[1].xyz = normalize(TRANSFORM[1].xyz);\n";
 			code += "	}\n";
+			code += "	CUSTOM.x = atan(TRANSFORM[1].y, TRANSFORM[1].x);\n";
 			code += "	TRANSFORM[0].xyz = normalize(cross(TRANSFORM[1].xyz, TRANSFORM[2].xyz));\n";
 			code += "	TRANSFORM[2] = vec4(0.0, 0.0, 1.0, 0.0);\n";
 		} else {
