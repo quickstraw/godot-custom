@@ -131,7 +131,7 @@ partial class PhysicsDirectSpaceState2D
     /// <summary>
     /// Checks the intersections of a shape, given through a <see cref="Godot.PhysicsShapeQueryParameters2D"/> object, against the space. The intersected shapes are filled into the <paramref name="results"/> span.
     /// </summary>
-    public unsafe int IntersectShapeNonAlloc(PhysicsPointQueryParameters2D parameters, Span<IntersectShapeResult> results)
+    public unsafe int IntersectShapeNonAlloc(PhysicsShapeQueryParameters2D parameters, Span<IntersectShapeResult> results)
     {
         var method = MethodBind2;
         var ptr = GodotObject.GetPtr(this);
