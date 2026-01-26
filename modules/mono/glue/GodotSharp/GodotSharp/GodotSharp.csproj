@@ -142,6 +142,7 @@
     <Compile Include="GlobalUsings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NonAlloc.cs" />
+    <Compile Include="NonAllocCustom.cs" />
   </ItemGroup>
 
   <!-- Compat Sources -->
