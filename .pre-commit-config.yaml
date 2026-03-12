@@ -23,6 +23,11 @@ repos:
       - id: clang-format
         files: \.(c|h|cpp|hpp|cc|hh|cxx|hxx|m|mm|inc|java)$
         types_or: [text]
+        exclude: |
+          (?x)^(
+            modules/godotsteam/.*|
+            modules/godotsteam_multiplayer_peer/.*
+          )$
       - id: clang-format
         name: clang-format-glsl
         files: \.glsl$
@@ -63,6 +68,12 @@ repos:
     hooks:
       - id: codespell
         additional_dependencies: [tomli]
+        exclude: |
+          (?x)^(
+            modules/godotsteam/.*|
+            modules/godotsteam_multiplayer_peer/.*|
+            .*\.svg
+          )$
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
     rev: 0.34.1
@@ -161,7 +172,9 @@ repos:
             platform/(?!android|ios|linuxbsd|macos|web|windows)\w+/.*|
             platform/android/java/lib/src/main/java/org/godotengine/godot/gl/GLSurfaceView\.java|
             platform/android/java/lib/src/main/java/org/godotengine/godot/gl/EGLLogWrapper\.java|
-            platform/android/java/lib/src/main/java/org/godotengine/godot/utils/ProcessPhoenix\.java
+            platform/android/java/lib/src/main/java/org/godotengine/godot/utils/ProcessPhoenix\.java|
+            modules/godotsteam/.*|
+            modules/godotsteam_multiplayer_peer/.*
           )$
 
       - id: header-guards
