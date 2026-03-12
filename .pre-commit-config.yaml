@@ -25,8 +25,7 @@ repos:
         types_or: [text]
         exclude: |
           (?x)^(
-            modules/godotsteam/.*|
-            modules/godotsteam_multiplayer_peer/.*
+            modules/godotsteam/.*
           )$
       - id: clang-format
         name: clang-format-glsl
@@ -71,7 +70,6 @@ repos:
         exclude: |
           (?x)^(
             modules/godotsteam/.*|
-            modules/godotsteam_multiplayer_peer/.*|
             .*\.svg
           )$
 
@@ -173,8 +171,7 @@ repos:
             platform/android/java/lib/src/main/java/org/godotengine/godot/gl/GLSurfaceView\.java|
             platform/android/java/lib/src/main/java/org/godotengine/godot/gl/EGLLogWrapper\.java|
             platform/android/java/lib/src/main/java/org/godotengine/godot/utils/ProcessPhoenix\.java|
-            modules/godotsteam/.*|
-            modules/godotsteam_multiplayer_peer/.*
+            modules/godotsteam/.*
           )$
 
       - id: header-guards
