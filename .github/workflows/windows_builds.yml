@@ -63,6 +63,10 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Initialize and update submodules manually
+        run: |
+          git submodule update --init --recursive
+
       - name: Restore Godot build cache
         uses: ./.github/actions/godot-cache-restore
         with:
