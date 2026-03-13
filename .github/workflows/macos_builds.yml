@@ -99,6 +99,10 @@ jobs:
           strip bin/godot.*
           chmod +x bin/godot.*
 
+      - name: Add Steamworks
+        run: |
+          cp thirdparty/steamworks/osx/libsteam_api.dylib bin/libsteam_api.dylib
+
       - name: Upload artifact
         uses: ./.github/actions/upload-artifact
         with:
