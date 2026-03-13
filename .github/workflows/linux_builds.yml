@@ -114,10 +114,6 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Add Steamworks
-        run: |
-          cp thirdparty/steamworks/linux64/libsteam_api.so bin/libsteam_api.so
-
       - name: Setup dependencies
         run: |
           sudo apt-get update
@@ -176,6 +172,10 @@ jobs:
       - name: Install mold linker
         if: matrix.proj-test
         uses: rui314/setup-mold@v1
+
+      - name: Add Steamworks
+        run: |
+          cp thirdparty/steamworks/linux64/libsteam_api.so bin/libsteam_api.so
 
       - name: Compilation
         uses: ./.github/actions/godot-build

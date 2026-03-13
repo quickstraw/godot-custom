@@ -63,10 +63,6 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Add Steamworks
-        run: |
-          cp thirdparty/steamworks/win64/steam_api64.dll bin/steam_api64.dll
-
       - name: Restore Godot build cache
         uses: ./.github/actions/godot-cache-restore
         with:
@@ -109,6 +105,10 @@ jobs:
 
       - name: Extract pre-built AccessKit
         run: unzip -o accesskit-c-0.18.0/accesskit_c.zip
+
+      - name: Add Steamworks
+        run: |
+          cp thirdparty/steamworks/win64/steam_api64.dll bin/steam_api64.dll
 
       - name: Compilation
         uses: ./.github/actions/godot-build
