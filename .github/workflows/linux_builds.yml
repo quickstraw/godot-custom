@@ -173,10 +173,6 @@ jobs:
         if: matrix.proj-test
         uses: rui314/setup-mold@v1
 
-      - name: Add Steamworks
-        run: |
-          cp thirdparty/steamworks/linux64/libsteam_api.so bin/libsteam_api.so
-
       - name: Compilation
         uses: ./.github/actions/godot-build
         with:
@@ -214,6 +210,10 @@ jobs:
         run: |
           strip bin/godot.*
           chmod +x bin/godot.*
+
+      - name: Add Steamworks
+        run: |
+          cp thirdparty/steamworks/linux64/libsteam_api.so bin/libsteam_api.so
 
       - name: Upload artifact
         uses: ./.github/actions/upload-artifact

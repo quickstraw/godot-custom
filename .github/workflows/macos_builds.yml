@@ -72,10 +72,6 @@ jobs:
           fi
         continue-on-error: true
 
-      - name: Add Steamworks
-        run: |
-          cp thirdparty/steamworks/osx/libsteam_api.dylib bin/libsteam_api.dylib
-
       - name: Compilation (x86_64)
         uses: ./.github/actions/godot-build
         with:
@@ -102,6 +98,10 @@ jobs:
           rm ./bin/godot.macos.${{ matrix.target }}.x86_64 ./bin/godot.macos.${{ matrix.target }}.arm64
           strip bin/godot.*
           chmod +x bin/godot.*
+
+      - name: Add Steamworks
+        run: |
+          cp thirdparty/steamworks/osx/libsteam_api.dylib bin/libsteam_api.dylib
 
       - name: Upload artifact
         uses: ./.github/actions/upload-artifact

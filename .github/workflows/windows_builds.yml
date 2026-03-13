@@ -106,10 +106,6 @@ jobs:
       - name: Extract pre-built AccessKit
         run: unzip -o accesskit-c-0.18.0/accesskit_c.zip
 
-      - name: Add Steamworks
-        run: |
-          cp thirdparty/steamworks/win64/steam_api64.dll bin/steam_api64.dll
-
       - name: Compilation
         uses: ./.github/actions/godot-build
         with:
@@ -127,6 +123,10 @@ jobs:
         if: matrix.compiler == 'msvc'
         run: |
           Remove-Item bin/* -Include *.exp,*.lib,*.pdb -Force
+
+      - name: Add Steamworks
+        run: |
+          cp thirdparty/steamworks/win64/steam_api64.dll bin/steam_api64.dll
 
       - name: Upload artifact
         if: matrix.compiler == 'msvc'
