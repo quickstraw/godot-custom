@@ -114,6 +114,10 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Add Steamworks
+        run: |
+          cp thirdparty/steamworks/linux64/libsteam_api.so bin/libsteam_api.so
+
       - name: Setup dependencies
         run: |
           sudo apt-get update
