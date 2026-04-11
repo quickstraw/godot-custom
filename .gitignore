@@ -397,3 +397,4 @@ $RECYCLE.BIN/
 *.generated.props
 
 !thirdparty/steamworks/**/*
+/build.ps1
