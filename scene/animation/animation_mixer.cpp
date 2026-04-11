@@ -123,7 +123,7 @@ bool AnimationMixer::_get(const StringName &p_name, Variant &r_ret) const {
 }
 
 uint32_t AnimationMixer::_get_libraries_property_usage() const {
-	return PROPERTY_USAGE_STORAGE;
+	return PROPERTY_USAGE_DEFAULT;
 }
 
 void AnimationMixer::_get_property_list(List<PropertyInfo> *p_list) const {
